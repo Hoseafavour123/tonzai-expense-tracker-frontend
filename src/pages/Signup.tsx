@@ -1,8 +1,10 @@
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import signupSchema from '../schemas/SignupSchema';
+import { registerUser } from '../store/auth';
 
 const Signup = () => {
   const {
@@ -14,8 +16,7 @@ const Signup = () => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
-    // Handle form submission (e.g., call an API)
+    registerUser(data);
   };
 
   return (
@@ -29,6 +30,13 @@ const Signup = () => {
           <form onSubmit={handleSubmit(onSubmit)} className="signup-form">
             <div className="title">
               <h1>Create your account</h1>
+            </div>
+            <div className="field">
+              <label htmlFor="name">Names</label>
+              <input type="text" id="name" {...register('name')} />
+              {errors.name && (
+                <p className="error-message">{errors.name.message}</p>
+              )}
             </div>
             <div className="field">
               <label htmlFor="email">Email</label>
