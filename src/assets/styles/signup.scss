@@ -1,0 +1,45 @@
+.signup-form {
+  padding: 10px;
+  background-color: $main-bg;
+  width: 700px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    label {
+      color: $black;
+      font-size: 16px;
+    }
+    input {
+      width: 400px;
+      border: 0;
+      box-shadow: 0px 4px 4px 0 $black;
+      padding: 5px;
+      margin-top: 5px;
+      border-radius: 10px;
+      outline: 0;
+      color: $black;
+    }
+  }
+  .button {
+    button {
+      background: $button-bg;
+      border: 0;
+      color: #ffff;
+      padding: 5px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+  a {
+    color: $button-bg;
+  }
+}
