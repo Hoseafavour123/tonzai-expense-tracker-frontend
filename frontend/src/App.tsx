@@ -1,26 +1,28 @@
 import { BrowserRouter, Routes, Navigate, Route } from 'react-router-dom'
-import Dashboard from './pages/Dashboard'
-import Register from './pages/Register'
 import { useAppContext } from './context/AppContext'
-import Login from './pages/Login'
 import Activation from './pages/Activation'
+import LandingPage from './pages/LandingPage'
+import Signup from './pages/Signup'
+import Dashboard from './pages/Dashboard'
+import Signin from './pages/Signin'
 
-function App() {
+
+const App = () => {
  const { isLoggedIn } = useAppContext()
   return (
     <BrowserRouter>
-      <Routes>
-        {isLoggedIn && (
-          <Route path="/dashboard" element={<Dashboard />}></Route>
-        )}
+    <Routes>
+      {isLoggedIn && (
         <Route path="/dashboard" element={<Dashboard />}></Route>
-        <Route path="/register" element={<Register />} />
-        <Route path="/activation" element={<Activation />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </BrowserRouter>
+      )}
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/signin" element={<Signin />} />
+      <Route path="/activation" element={<Activation />} />
+      <Route path="/" element={<LandingPage />}/>
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
+  </BrowserRouter>
   )
 }
 
-export default App
+export default App;

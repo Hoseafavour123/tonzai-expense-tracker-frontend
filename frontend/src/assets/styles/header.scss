@@ -1,0 +1,35 @@
+header {
+  background: $header-bg;
+  width: 100%;
+  height: 80px;
+  .container {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    padding-top: 10px;
+    .logo {
+      flex: 1;
+      padding: 10px;
+      a {
+        color: $titles-color;
+      }
+    }
+    .links {
+      flex: 2;
+      padding: 10px;
+      ul {
+        float: right;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        list-style: none;
+        li {
+          margin-left: 10px;
+          a {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}
